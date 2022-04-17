@@ -1,0 +1,31 @@
+.subnav{
+    background-color: var(--sub-nav-color);
+    height: 64px;
+    box-shadow: 0 10px 10px -10px rgb(39, 37, 37);
+}
+.subnav .container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.subnav .container ul li{
+    display: flex;
+    justify-content: center;
+    /* background-color: blue; */
+    padding: .3rem 0;
+    border: none;
+    border-right: 2px solid black;
+}
+.subnav .container ul :last-child{
+    border-right: none;
+}
+.subnav .container ul li a{
+    font-size: 1rem;
+}
+
+
+@media (max-width:770px) {
+    .subnav{
+        display: none;
+    }
+}

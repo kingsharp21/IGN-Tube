@@ -1,0 +1,60 @@
+.mobilecontrols{
+    padding: .4rem 12px;
+    margin: 0 auto;
+    width: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* flex-direction: column; */
+    justify-content:space-between;
+    /* background-color: aqua; */
+}
+.vid-top{
+    visibility: hidden;
+    transition: all .5s ease-in-out ;
+}
+.react-player__play-icon{
+    transition: all .5s ease-in-out ;
+    visibility: hidden;
+}
+.mobilecontrols .slide{
+    transition: all .5s ease-in-out ;
+    visibility: hidden;
+}
+.mobilecontrols:hover .vid-top {
+    visibility: visible;
+}
+.mobilecontrols:hover .react-player__play-icon{
+    visibility: visible;
+}
+.mobilecontrols:hover .slide{
+    visibility: visible;
+}
+.mobilecontrols div{
+    /* background-color: blue; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-size: 1rem ;
+    font-weight:600 ;
+    height: 40px;
+}
+.mobilecontrols .react-player__play-icon{
+    /* background-color: aqua; */
+    justify-self: center;
+    align-content: center;
+
+}
+
+@media screen and (min-width: 750px) {
+    .mobilecontrols{
+        display: none;
+    }
+}

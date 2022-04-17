@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+import React from 'react';
+import MainNav from './components/Navbar/MainNavbar/MainNav';
+import SubNav from './components/Navbar/SubNavbar/SubNav';
+import Showcase from './components/Showcase/Showcase'
+import MobileNav from './components/Navbar/MobileNav/MobileNav';
+// boostrap 
+import 'bootstrap/dist/css/bootstrap.min.css'
+// css 
 import './App.css';
+import Login from './components/login/Login';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <MainNav/>
+      <SubNav/>
+      <Showcase/>
+      <MobileNav/>
+    </>
   );
 }
 
