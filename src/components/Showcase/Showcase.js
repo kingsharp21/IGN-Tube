@@ -5,6 +5,7 @@ import './Showcase.css'
 import vid1 from '../../assests/vid/vid1.mp4'
 import vid from '../../assests/vid/vid.mp4'
 import screenfull from "screenfull";
+import HoverVideoPlayer from 'react-hover-video-player';
 
 
 // controlls 
@@ -33,6 +34,7 @@ function SecondsPlayed(value) {
 }
 
 function Showcase() {
+
     const [state, setState] = useState({
         playing: true,
         mute: true,
@@ -95,7 +97,7 @@ function Showcase() {
     // played seconds 
     const currentTime = state.playedSeconds
     const elapsedTime = SecondsPlayed(currentTime);
-    
+
     const handleDuration = (duration) => {
         // console.log('onDuration', duration)
         const sec = parseInt(duration, 10); // convert value to number if it's string
@@ -124,19 +126,25 @@ function Showcase() {
     }
 
 
-    const gitHubUrl = 'https://ign-apis.herokuapp.com/articles';
+    const gitHubUrl = 'https://ign-apis.herokuapp.com/videos?startIndex=30&count=5';
+    const [apiData, setApiData] = useState('')
 
+    useEffect(() => {
+        fetch(gitHubUrl)
+            .then((response) => response.json())
+            .then((data) => setApiData(data));
+    }, []);
 
     return (
         <section className="showcase">
             <div className="container ">
                 <div className="row d-flex align-items-start justify-content-between ">
                     <div ref={playerContainerRef} className="video-section col-sm-12 col-md-12 col-lg-8 col-xl-8">
-                        <div className="active_video">
+                        <div className="active_video" style={{ borderRadius: '10px',background:'black' }}>
                             <ReactPlayer
                                 // light='https://assets1.ignimgs.com/2021/05/21/rengoku-blogroll-1621631426779_large.jpg'
                                 className='video'
-                                style={{ borderRadius: '10px' }}
+                                style={{ borderRadius: '10px',background:'black' }}
                                 width='100%'
                                 height='100%'
                                 playing={playing}
@@ -148,8 +156,8 @@ function Showcase() {
                                 stopOnUnmount={false}
                                 onDuration={handleDuration}
                                 // url='https://assets14.ign.com/videos/zencoder/2022/03/28/640/777a42c4609c84b4f57a8d4c65ba4a97-752000-1648457309.mp4' />
-                                url={vid1} />
-                                {/* url='https://assets14.ign.com/videos/zencoder/2022/04/01/640/cf8195b4d4a14b3006fd0af2eafb3483-347000-1648865793.mp4' /> */}
+                                url='https://assets14.ign.com/videos/zencoder/2022/04/05/640/234a4498f317bc8c5992f23b1b018069-500000-1649147469.mp4' />
+                            {/* url='https://assets14.ign.com/videos/zencoder/2022/04/01/640/cf8195b4d4a14b3006fd0af2eafb3483-347000-1648865793.mp4' /> */}
                             {/* /> */}
                             <MobileControls
                                 played={played}
@@ -211,65 +219,39 @@ function Showcase() {
 }
 
 function Playlist() {
+    const jj = 'https://assets1.ignimgs.com/thumbs/userUploaded/2022/4/1/tunic-br-1648838584873_large.jpg'
     return (
         <>
-            <div className="playlist">
+            <div className="playlist ">
                 <div>
-                    <ReactPlayer
-                        className='thumbnail-video'
-                        style={{ borderRadius: '10px' }}
-                        width='170px'
-                        height='100%'
-                        // url='https://assets14.ign.com/videos/zencoder/2022/03/28/640/777a42c4609c84b4f57a8d4c65ba4a97-752000-1648457309.mp4' />
-                        url={vid} />
-                    {/* /> */}
+                    <img src={jj} alt="" />
                     <span>3:21</span>
                 </div>
                 <p>Hi, I am Kingsharp Nkansah</p>
             </div>
-            <div className="playlist">
+            <div className="playlist ">
                 <div>
-                    <ReactPlayer
-                        className='thumbnail-video'
-                        style={{ borderRadius: '10px' }}
-                        width='170px'
-                        height='100%'
-                        // url='https://assets14.ign.com/videos/zencoder/2022/03/28/640/777a42c4609c84b4f57a8d4c65ba4a97-752000-1648457309.mp4' />
-                        url={vid} />
-                    {/* /> */}
+                    <img src={jj} alt="" />
                     <span>3:21</span>
                 </div>
                 <p>Hi, I am Kingsharp Nkansah</p>
             </div>
-            <hr />
-            <div className="playlist">
+            <hr/>
+            <div className="playlist ">
                 <div>
-                    <ReactPlayer
-                        className='thumbnail-video'
-                        style={{ borderRadius: '10px' }}
-                        width='170px'
-                        height='100%'
-                        // url='https://assets14.ign.com/videos/zencoder/2022/03/28/640/777a42c4609c84b4f57a8d4c65ba4a97-752000-1648457309.mp4' />
-                        url={vid} />
-                    {/* /> */}
+                    <img src={jj} alt="" />
                     <span>3:21</span>
                 </div>
                 <p>Hi, I am Kingsharp Nkansah</p>
             </div>
-            <div className="playlist">
+            <div className="playlist ">
                 <div>
-                    <ReactPlayer
-                        className='thumbnail-video'
-                        style={{ borderRadius: '10px' }}
-                        width='170px'
-                        height='100%'
-                        // url='https://assets14.ign.com/videos/zencoder/2022/03/28/640/777a42c4609c84b4f57a8d4c65ba4a97-752000-1648457309.mp4' />
-                        url={vid} />
-                    {/* /> */}
+                    <img src={jj} alt="" />
                     <span>3:21</span>
                 </div>
                 <p>Hi, I am Kingsharp Nkansah</p>
             </div>
+            
         </>
     )
 }

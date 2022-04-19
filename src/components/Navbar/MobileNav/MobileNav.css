@@ -8,6 +8,7 @@
     right: 0;
     overflow: hidden;
     box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
 }
 .mobileNav .container{
     height: 100%;
@@ -16,7 +17,7 @@
     justify-content: space-around;
 }
 
-@media (min-width:770px) {
+@media (min-width:995px) {
     .mobileNav{
         display: none;
     }

@@ -20,7 +20,7 @@ function MainNav() {
         <nav>
             <div className="container">
                 <div className="row d-flex align-items-center justify-content-between">
-                    <div className="logo d-flex align-items-center justify-content-between col col-sm-5 col-md-4 col-lg-3 col-xl-3">
+                    <div className="logo d-flex align-items-center justify-content-between col-auto">
                         <div className='img'>
                             <img
                                 style={{ width: '90%' }}

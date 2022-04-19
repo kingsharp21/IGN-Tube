@@ -9,16 +9,25 @@ nav .container .row {
     padding: 0;
     margin: 0;
 }
+.img img{
+    /* background-color: aqua; */
+    width: 150px !important;
+    height:40px !important;
+}
+.current_date{
+    padding: .5rem ;
+}
 
 .nav_list a{
     font-size: 1.2rem;
     color: black;
-    font-weight: 600;
+    font-weight: 400;
     margin: 0 1rem;
+    transition: all .2s ease-in-out;
 }
 .current_date h2{
     /* padding:0 1rem; */
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin: 0;
     font-weight: 800;
 }
@@ -68,6 +77,9 @@ nav .container .row {
         margin:0 auto;
     }
 }
-@media (min-width: 770px) and (max-width: 992px){
-    
+@media (min-width: 995px) and (max-width: 1200px){
+    .nav_list a{
+        /* padding: 0 6px; */
+        margin: 0 10px;
+    }
 }

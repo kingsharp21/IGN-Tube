@@ -1,9 +1,8 @@
 {
   "name": "ign",
+  "homepage": "https://kingsharp21.github.io/IGN-Tube",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://ign-apis.herokuapp.com/",
-  "homepage": "http://localhost:3000",
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
@@ -17,15 +16,19 @@
     "browserify-zlib": "^0.2.0",
     "cors": "^2.8.5",
     "express": "^4.17.3",
+    "gh-pages": "^3.2.3",
     "react": "^18.0.0",
     "react-bootstrap": "^2.2.3",
     "react-dom": "^18.0.0",
+    "react-hover-video-player": "^9.5.0",
     "react-player": "^2.10.0",
     "react-scripts": "5.0.0",
     "screenfull": "^6.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -48,5 +51,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-config-react-app": "^7.0.1"
   }
 }
