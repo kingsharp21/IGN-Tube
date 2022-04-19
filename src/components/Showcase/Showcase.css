@@ -1,6 +1,6 @@
-/* hr {
-    border: 2px solid black;
-} */
+hr {
+    margin-top:0 ;
+}
 .showcase{
     height: auto;
     padding:2rem 0 ;
@@ -11,7 +11,8 @@
     overflow: hidden;
 }
 /* .active_video{
-    height: 30rem;
+    height: 494.49px;
+    background-color: aqua;
 } */
 video{
     border-radius: 10px;
@@ -39,10 +40,13 @@ video{
     align-items: center;
 }
 .playlist{
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
     cursor: pointer;
+    margin: 0 0 20px;
+    /* background-color: aqua; */
 }
 .playlist div{
     position: relative;
@@ -83,10 +87,10 @@ video{
 .video_box{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 494.49px;
+    /* height: 494.49px; */
     width: 100%;
-    margin: 0 0 35px;
+    margin: 0 0 30px;
+    overflow: auto;
 }
 button{
     background-color: var(--btn-color);

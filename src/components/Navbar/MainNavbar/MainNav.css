@@ -36,10 +36,11 @@ nav .container .row {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-image: url('../../../assests/img/kk.jpg');
+    background-image: url('../../../assests/img/avatar.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: cornflowerblue;
 }
 
 

@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import ReactPlayer from "react-player";
 import axios from "axios";
 import './Showcase.css'
-import vid1 from '../../assests/vid/vid1.mp4'
-import vid from '../../assests/vid/vid.mp4'
 import screenfull from "screenfull";
 import HoverVideoPlayer from 'react-hover-video-player';
 
@@ -126,7 +124,7 @@ function Showcase() {
     }
 
 
-    const gitHubUrl = 'https://ign-apis.herokuapp.com/videos?startIndex=30&count=5';
+    const gitHubUrl = 'https://ign-apis.herokuapp.com/videos';
     const [apiData, setApiData] = useState('')
 
     useEffect(() => {
@@ -144,7 +142,7 @@ function Showcase() {
                             <ReactPlayer
                                 // light='https://assets1.ignimgs.com/2021/05/21/rengoku-blogroll-1621631426779_large.jpg'
                                 className='video'
-                                style={{ borderRadius: '10px',background:'black' }}
+                                style={{ borderRadius: '10px' }}
                                 width='100%'
                                 height='100%'
                                 playing={playing}
@@ -157,8 +155,7 @@ function Showcase() {
                                 onDuration={handleDuration}
                                 // url='https://assets14.ign.com/videos/zencoder/2022/03/28/640/777a42c4609c84b4f57a8d4c65ba4a97-752000-1648457309.mp4' />
                                 url='https://assets14.ign.com/videos/zencoder/2022/04/05/640/234a4498f317bc8c5992f23b1b018069-500000-1649147469.mp4' />
-                            {/* url='https://assets14.ign.com/videos/zencoder/2022/04/01/640/cf8195b4d4a14b3006fd0af2eafb3483-347000-1648865793.mp4' /> */}
-                            {/* /> */}
+                        
                             <MobileControls
                                 played={played}
                                 handleSeekChange={handleSeekChange}
@@ -237,6 +234,7 @@ function Playlist() {
                 <p>Hi, I am Kingsharp Nkansah</p>
             </div>
             <hr/>
+           
             <div className="playlist ">
                 <div>
                     <img src={jj} alt="" />
