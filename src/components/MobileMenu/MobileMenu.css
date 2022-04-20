@@ -1,0 +1,20 @@
+.mobile_menu{
+    height: calc(100vh - 54px);
+    /* background-color: var(--btn-color); */
+    transition: all .3s ease-out;
+}
+.mobile_menu .container{
+    /* background-color: aliceblue; */
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.mobile_menu .container a{
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    /* background-color: aqua; */
+}

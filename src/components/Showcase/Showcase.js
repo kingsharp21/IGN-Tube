@@ -1,14 +1,21 @@
 import React, { useState, useEffect, useRef } from "react";
 import ReactPlayer from "react-player";
-import axios from "axios";
 import './Showcase.css'
 import screenfull from "screenfull";
+import vid from '../../assests/vid.mp4'
+import WidgetsIcon from '@mui/icons-material/Widgets';
+import HomeIcon from '@mui/icons-material/Home';
 import HoverVideoPlayer from 'react-hover-video-player';
+
+import Playlist from "./playlist/Playlist";
 
 
 // controlls 
 import MobileControls from "../contols/mobilecontrols/MobileControls";
 import DesktopControls from "../contols/desktopcontrols/DesktopControls";
+
+// videoList 
+import MobileMenu from '../MobileMenu/MobileMenu'
 
 
 // playedTime 
@@ -31,10 +38,10 @@ function SecondsPlayed(value) {
     return hours + ':' + minutes + ':' + seconds; // Return is HH : MM : SS
 }
 
-function Showcase() {
+function Showcase({showcase,navlist}) {
 
     const [state, setState] = useState({
-        playing: true,
+        playing: false,
         mute: true,
         volume: 0.5,
         played: 0,
@@ -42,7 +49,7 @@ function Showcase() {
         loop: false,
         fullscreen: false,
         pip: false,
-        duration: 0
+        duration: 0,
     })
     const { playing, mute, volume, played, seeking, loop, fullscreen, pip, duration } = state
     const playerContainerRef = useRef(null)
@@ -133,126 +140,95 @@ function Showcase() {
             .then((data) => setApiData(data));
     }, []);
 
+
     return (
-        <section className="showcase">
-            <div className="container ">
-                <div className="row d-flex align-items-start justify-content-between ">
-                    <div ref={playerContainerRef} className="video-section col-sm-12 col-md-12 col-lg-8 col-xl-8">
-                        <div className="active_video" style={{ borderRadius: '10px',background:'black' }}>
-                            <ReactPlayer
-                                // light='https://assets1.ignimgs.com/2021/05/21/rengoku-blogroll-1621631426779_large.jpg'
-                                className='video'
-                                style={{ borderRadius: '10px' }}
-                                width='100%'
-                                height='100%'
-                                playing={playing}
-                                muted={mute}
-                                volume={volume}
-                                onProgress={handleProgress}
-                                loop={loop}
-                                pip={pip}
-                                stopOnUnmount={false}
-                                onDuration={handleDuration}
-                                // url='https://assets14.ign.com/videos/zencoder/2022/03/28/640/777a42c4609c84b4f57a8d4c65ba4a97-752000-1648457309.mp4' />
-                                url='https://assets14.ign.com/videos/zencoder/2022/04/05/640/234a4498f317bc8c5992f23b1b018069-500000-1649147469.mp4' />
-                        
-                            <MobileControls
-                                played={played}
-                                handleSeekChange={handleSeekChange}
-                                handleSeekMouseDown={handleSeekMouseDown}
-                                handleSeekMouseUp={handleSeekMouseUp}
-                                toggleFullScreen={toggleFullScreen}
-                                playing={playing}
-                                handlePlayPause={handlePlayPause}
-                                handleMute={handleMute}
-                                mute={mute}
-                                volume={volume}
-                                PlayedhoursTime={PlayedhoursTime}
-                                PlayedminutesTime={PlayedminutesTime}
-                                PlayedsecondsTime={PlayedsecondsTime}
-                                TotalDurationHours={TotalDurationHours}
-                                TotalDurationMinutes={TotalDurationMinutes}
-                                TotalDurationSeconds={TotalDurationSeconds}
-                            />
-                            <DesktopControls
-                                played={played}
-                                handleSeekChange={handleSeekChange}
-                                handleSeekMouseDown={handleSeekMouseDown}
-                                handleSeekMouseUp={handleSeekMouseUp}
-                                playing={playing}
-                                handlePlayPause={handlePlayPause}
-                                mute={mute}
-                                volume={volume}
-                                handleMute={handleMute}
-                                toggleFullScreen={toggleFullScreen}
-                                fullscreen={fullscreen}
-                                handleVolumeChange={handleVolumeChange}
-                                handleVolumeSeekUp={handleVolumeSeekUp}
-                                handleLoop={handleLoop}
-                                loop={loop}
-                                pictureInPictureMode={pictureInPictureMode}
-                                // elapsedTime={elapsedTime}
-                                // totalDuration={totalDuration}
-                                PlayedhoursTime={PlayedhoursTime}
-                                PlayedminutesTime={PlayedminutesTime}
-                                PlayedsecondsTime={PlayedsecondsTime}
-                                TotalDurationHours={TotalDurationHours}
-                                TotalDurationMinutes={TotalDurationMinutes}
-                                TotalDurationSeconds={TotalDurationSeconds}
-                            />
+        <>
+            <MobileMenu classname={navlist}/>:
+            <section className={`showcase ${showcase}`}>
+                <div className="container ">
+                    <div className="row d-flex align-items-start justify-content-between ">
+                        <div ref={playerContainerRef} className="video-section col-sm-12 col-md-12 col-lg-8 col-xl-8">
+                            <div className="active_video" style={{ borderRadius: '10px', background: 'black' }}>
+                                <ReactPlayer
+                                    // light='https://assets1.ignimgs.com/2021/05/21/rengoku-blogroll-1621631426779_large.jpg'
+                                    className='video'
+                                    style={{ borderRadius: '10px' }}
+                                    width='100%'
+                                    height='100%'
+                                    playing={playing}
+                                    muted={mute}
+                                    volume={volume}
+                                    onProgress={handleProgress}
+                                    loop={loop}
+                                    pip={pip}
+                                    stopOnUnmount={false}
+                                    onDuration={handleDuration}
+                                    url={vid} />
+                                {/* url='https://assets14.ign.com/videos/zencoder/2022/04/05/640/234a4498f317bc8c5992f23b1b018069-500000-1649147469.mp4' /> */}
+
+                                <MobileControls
+                                    played={played}
+                                    handleSeekChange={handleSeekChange}
+                                    handleSeekMouseDown={handleSeekMouseDown}
+                                    handleSeekMouseUp={handleSeekMouseUp}
+                                    toggleFullScreen={toggleFullScreen}
+                                    playing={playing}
+                                    handlePlayPause={handlePlayPause}
+                                    handleMute={handleMute}
+                                    mute={mute}
+                                    volume={volume}
+                                    PlayedhoursTime={PlayedhoursTime}
+                                    PlayedminutesTime={PlayedminutesTime}
+                                    PlayedsecondsTime={PlayedsecondsTime}
+                                    TotalDurationHours={TotalDurationHours}
+                                    TotalDurationMinutes={TotalDurationMinutes}
+                                    TotalDurationSeconds={TotalDurationSeconds}
+                                />
+                                <DesktopControls
+                                    played={played}
+                                    handleSeekChange={handleSeekChange}
+                                    handleSeekMouseDown={handleSeekMouseDown}
+                                    handleSeekMouseUp={handleSeekMouseUp}
+                                    playing={playing}
+                                    handlePlayPause={handlePlayPause}
+                                    mute={mute}
+                                    volume={volume}
+                                    handleMute={handleMute}
+                                    toggleFullScreen={toggleFullScreen}
+                                    fullscreen={fullscreen}
+                                    handleVolumeChange={handleVolumeChange}
+                                    handleVolumeSeekUp={handleVolumeSeekUp}
+                                    handleLoop={handleLoop}
+                                    loop={loop}
+                                    pictureInPictureMode={pictureInPictureMode}
+                                    // elapsedTime={elapsedTime}
+                                    // totalDuration={totalDuration}
+                                    PlayedhoursTime={PlayedhoursTime}
+                                    PlayedminutesTime={PlayedminutesTime}
+                                    PlayedsecondsTime={PlayedsecondsTime}
+                                    TotalDurationHours={TotalDurationHours}
+                                    TotalDurationMinutes={TotalDurationMinutes}
+                                    TotalDurationSeconds={TotalDurationSeconds}
+                                />
+                            </div>
+                            <Description />
                         </div>
-                        <Description />
-                    </div>
-                    <div className="list col-sm-12 col-md-12 col-lg-4 col-xl-4">
-                        <div className="video_box">
-                            <Playlist />
+                        <div className="list col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                            <div className="video_box">
+                                <Playlist />
+                            </div>
+                            <button>Load More</button>
                         </div>
-                        <button>Load More</button>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            
+        </>
     );
 }
 
-function Playlist() {
-    const jj = 'https://assets1.ignimgs.com/thumbs/userUploaded/2022/4/1/tunic-br-1648838584873_large.jpg'
-    return (
-        <>
-            <div className="playlist ">
-                <div>
-                    <img src={jj} alt="" />
-                    <span>3:21</span>
-                </div>
-                <p>Hi, I am Kingsharp Nkansah</p>
-            </div>
-            <div className="playlist ">
-                <div>
-                    <img src={jj} alt="" />
-                    <span>3:21</span>
-                </div>
-                <p>Hi, I am Kingsharp Nkansah</p>
-            </div>
-            <hr/>
-           
-            <div className="playlist ">
-                <div>
-                    <img src={jj} alt="" />
-                    <span>3:21</span>
-                </div>
-                <p>Hi, I am Kingsharp Nkansah</p>
-            </div>
-            <div className="playlist ">
-                <div>
-                    <img src={jj} alt="" />
-                    <span>3:21</span>
-                </div>
-                <p>Hi, I am Kingsharp Nkansah</p>
-            </div>
-            
-        </>
-    )
-}
+
 
 function Description() {
     return (
@@ -268,6 +244,7 @@ function Description() {
         </>
     )
 }
+
 
 
 

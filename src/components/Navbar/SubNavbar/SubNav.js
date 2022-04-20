@@ -1,9 +1,9 @@
 // css 
 import './SubNav.css'
-function SubNav() {
+function SubNav({showcase}) {
     return ( 
        <>
-        <div className="subnav">
+        <div className={`subnav ${showcase}`}>
             <div className="container ">
                 <ul>
                     <li><a href="#">Kingdom Hearts |||</a></li>

@@ -3,12 +3,16 @@ import WidgetsIcon from '@mui/icons-material/Widgets';
 import HomeIcon from '@mui/icons-material/Home';
 // css 
 import './MobileNav.css'
-function MobileNav() {
+function MobileNav({render}) {
+    const view =()=>{
+        render=''
+    }
     return(
     <>
     <section className='mobileNav'>
             <div className="container">
                 <HomeIcon
+                onClick={view}
                 sx={{
                     width: '35px',
                     height: '30px',

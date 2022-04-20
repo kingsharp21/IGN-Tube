@@ -37,7 +37,37 @@ li{
 .hidden {
   display: none;
 }
+hr {
+  margin-top:0 ;
+  margin-bottom: 0;
+}
 
+
+
+.mobileNav{
+  width: 100%;
+  height: 54px;
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+.mobileNav .container{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media (min-width:995px) {
+  .mobileNav{
+      display: none;
+  }
+}
 
 
 
