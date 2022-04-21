@@ -3,7 +3,6 @@
 :root{
     --btn-color:#bf1313;
     --sub-nav-color:#f6f6f8;
-    --radius:'10px'
 }
 *,::after,::before{
   margin: 0;
