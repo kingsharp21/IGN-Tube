@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/IGN-Tube/static/css/main.457af887.css",
-    "main.js": "/IGN-Tube/static/js/main.aa02b722.js",
+    "main.css": "/IGN-Tube/static/css/main.692cb25a.css",
+    "main.js": "/IGN-Tube/static/js/main.d7288dcc.js",
     "static/js/787.b276093b.chunk.js": "/IGN-Tube/static/js/787.b276093b.chunk.js",
     "static/media/vid.mp4": "/IGN-Tube/static/media/vid.4017cc3a8f41b0a524fc.mp4",
     "static/media/vid1.mp4": "/IGN-Tube/static/media/vid1.b24628983424b0827eb1.mp4",
     "static/media/avatar.png": "/IGN-Tube/static/media/avatar.57b5cffba717b2cfd65b.png",
     "index.html": "/IGN-Tube/index.html",
-    "main.457af887.css.map": "/IGN-Tube/static/css/main.457af887.css.map",
-    "main.aa02b722.js.map": "/IGN-Tube/static/js/main.aa02b722.js.map",
+    "main.692cb25a.css.map": "/IGN-Tube/static/css/main.692cb25a.css.map",
+    "main.d7288dcc.js.map": "/IGN-Tube/static/js/main.d7288dcc.js.map",
     "787.b276093b.chunk.js.map": "/IGN-Tube/static/js/787.b276093b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.457af887.css",
-    "static/js/main.aa02b722.js"
+    "static/css/main.692cb25a.css",
+    "static/js/main.d7288dcc.js"
   ]
 }
